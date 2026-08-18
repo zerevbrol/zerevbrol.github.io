@@ -2,10 +2,7 @@
 
 /* Accordion collapsible courtesy of W3 Schools */
 
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
     --textcolor: black;
     --pagebg: white;
     --sectionbg: white;
@@ -14,9 +11,13 @@
     --monobg: #eeeeee;
 }
 
+*, *::before, *::after { 
+    box-sizing: border-box;
+}
+
 /* Specify palette for darkmode */
 @media (prefers-color-scheme: dark) {
-    * {
+    :root {
         --textcolor: white;
         --pagebg: #24242C;
         --sectionbg: #34343C;
@@ -30,14 +31,12 @@
     }
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
+/*=================*/
 
 html {
     background-color: var(--pagebg);
-    scrollbar-gutter: stable;
+    height: 100%;
+    width: 100%;
 }
 
 body {
@@ -46,196 +45,107 @@ body {
     font-weight: 400;
     font-optical-sizing: auto;
     font-style: normal;
-    
+    /**/
     line-height: 1.4;
     color: var(--textcolor);
-    width: 43em;
-
-    /* moving padding here because this is stylelight */
-    padding: 2.5em 2em 1em 2em;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px 0 10px;
 }
 
-footer {
+.layout { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 0;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "top-shelf top-shelf top-shelf"
+    "top-shelf top-shelf top-shelf"
+    "dropdowns dropdowns dropdowns"
+    "footer footer footer";
+}
+
+.dropdowns {
+    grid-area: dropdowns;
+    display: flex;
+    margin-top: 5%;
+    max-width: 80%;
+    padding-left: 50px;
+    align-self: center;
+    justify-self: center;
+}
+
+.dropdowns > ul li {
+    margin-bottom: 8px;
+}
+
+.footer { 
+    grid-area: footer; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    max-width: fit-content;
+}
+
+.top-shelf { 
+    display: grid;
+    grid-template-columns: 0.9fr [fi] 0.5fr 1.6fr;
+    grid-template-rows: 1.3fr 0.2fr 1.5fr;
+    column-gap: 0;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "top-corner top-corner picture"
+    "blurb blurb picture"
+    "blurb blurb picture";
+    grid-area: top-shelf;
+}
+
+.top-corner {
+    grid-area: top-corner;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6dvw;
+    font-weight: bolder;
+    min-width: 10%;
+}
+
+.blurb {
+    grid-area: blurb;
+    padding-left: 15px;
+    font-size: 1.7dvw;
+}
+
+.picture {
+    grid-area: picture;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    min-width: 35dvw;
+    margin-top: 100px;
+}
+
+/*=================*/
+
+img {
+    max-width: 30%;
+    border-radius: 30px;
+}
+
+footer.footer {
     color: var(--links);
-    font-size: 85%;
-    border-top: 1px solid var(--links);
-    width: 75%;
-    margin-top: 3em;
+    font-size: smaller;
+    margin-top: 10%;
+    text-decoration: 1.5px overline solid var(--links);
 }
 
 a {
-    text-decoration: underline;
     text-decoration-color: transparent;
     transition: 0.2s;
     color: var(--links);
 }
-
-/*
-Styling for navbar (header) and anchors
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-h1 {
-    font-size: 1em;
-    font-weight: 600;
-    flex: 1;
-    white-space: nowrap;
-}
-
-nav a:hover {
-    text-decoration-color: var(--links);
-    transition: 0.2s;
-}
-
-nav a:not(:last-of-type) {
-    margin-right: .5em;
-}
-
-a.inert:hover{
-    text-decoration-color: transparent;
-}
-
-section {
-    background: var(--sectionbg);
-    padding: 5em 2em 6em;
-    display: none;
-    top: 0;
-    width: 100%;
-}
-
-section:target {
-    display: block;
-}
-
-body:not(body:has(section:target)) section#home{
-    display: block;
-}
-*/
-
-h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: .5em;
-    letter-spacing: -0.03em;
-}
-
-h3 {
-    font-size: 1.75em;
-    margin-top: 0.75em;
-    margin-bottom: .5em;
-    letter-spacing: -0.03em;
-}
-
-button, div, p {
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: 1.25em;
-    letter-spacing: 0.02em;
-    width: min(60ch, 90vw);
-    /* 60ch is evidently a good standard for legibility */
-    margin-bottom: 1em;
-}
-
-p a{
-    text-decoration-color: var(--links);
-}
-
-button, div {
-    font-family: "Geomini", "Public Sans", sans-serif;
-    width: inherit;
-}
-
-img {
-    /* <img> default is a mess evidently */
-    width: 100%;
-    height: auto;
-}
-
-.accordion {
-    background-color: var(--sectionbg);
-    color: var(--textcolor);
-    cursor: pointer;
-    padding: 1em;
-    width: min(60ch, 90vw);
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: var(--monobg);
-}
-
-.panel {
-    padding: 1em;
-    background-color: var(--sectionbg);
-    display: none;
-    flex: 1;
-    width: min(60ch, 90vw);
-    overflow: hidden;
-}
-
-/* Enforce <p>'s when nested in this funky way */
-button.accordion ~ div.panel p {
-    width: inherit;
-    font-size: 80%;
-    padding-right: 5%;
-}
-
-/* 
-
-Adapted from pharmacist-sabot on Uiverse.io
-https://freefrontend.com/css-paper-effects/#2026-02-06-hand-drawn-retro-radio-group-l
-
-*/
-.tooltip {
-    position: relative;
-    display: inline-flex;
-    cursor: pointer;
-    text-decoration: underline 2.5px dotted var(--links);
-    align-items: center;
-}
-
-.ttcontent {
-    visibility: hidden;
-    width: 40vw;
-    padding: 2px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    bottom: auto;
-}
-
-/* :active will add functionality for mobile user taps */
-.tooltip:hover .ttcontent, .tooltip:active .ttcontent {
-    visibility: visible;
-}
-
-/* 
-
-For mobile users; need to optimize based on rules
-
-@media only screen and (max-width: 680px) {
-    html{
-        width: 100vw;
-        overflow-x: hidden;
-    }
-    body {
-        font-size: 16px;
-        line-height: 1.6;
-        width: 100vw;
-    }
-    footer{
-        display: flex;
-    }
-}
-*/

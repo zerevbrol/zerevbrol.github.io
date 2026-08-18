@@ -13,10 +13,8 @@ Jackapedia via Free Website version 1.8.0, April 2026 (CCO 1.0) --- https://ko-f
 <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <!-- scale for iPhones -->
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>LP Bryant</title>
-        <!-- embedded metadata (not displayed unless called by an application) -->
         <meta property="og:title" content="LP Bryant">
         <meta property="og:description" content="Liam Patrick (LP) Bryant's landing page">
         
@@ -29,70 +27,81 @@ Jackapedia via Free Website version 1.8.0, April 2026 (CCO 1.0) --- https://ko-f
         -->
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫟</text></svg>">
 
-        <!-- Preload fonts here -->
         <link rel="preconnect" href="https://fonts.googleapis.com/">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 
-        <!-- Helps ensure compatibility with older browswers -->
         <link href="/reset.css" rel="stylesheet">
         <link href="/style.css" rel="stylesheet">
-        <link href="https://cdn.lineicons.com/5.1/line/lineicons.css" rel="stylesheet"/>
+        <link href="/dropdowns.css" rel="stylesheet">
+    <style>
+        .dropdown > .dropdown-menu li a:hover, div span a:hover {
+            background: var(--textcolor);
+            border-radius: 10px;
+            padding: 2px;
+        }
     </style>
 </head>
-    <body class="container">
+    <body>
+        <header class="top-shelf">
+            <h1 class="top-corner">L.P. Bryant</h1>
+            <img class="picture" src="/media/profile.png" alt="Portrait of LP Bryant smiling in the sun">
+            <div class="blurb">
+                <span>
+                    I'm a Seattle-based archivist and technical art historian from San Diego, California. I'm also an independent researcher exploring information sensuality and invisible information labor. I'm currently working with my good friend <a target="_blank" href="https://www.nsaxena.com/">Nayan Saxena</a> on connecting these areas to machine learning. I'm also currently assisting the <a target="_blank" href="https://www.chihuly.com/about-chihuly-studio">Chihuly, Inc.</a> archives. If you have any questions at all, please feel free to <a target="_self" href="mailto:liampb@duck.com" >get in touch</a>, and check out more about me and my work below. Thanks for stopping by!
+                </span>
+            </div>
         </header>
-        <main>
-            <h2>
-                L.P. Bryant
-                <i class="lni lni-camera-1 tooltip" style="padding-left: 0.25rem;">
-                    <img class="ttcontent" src="/media/profile.png" alt="Portrait of LP Bryant smiling in the sun" style="clip-path: circle(45%);">
-                </i>
-            </h2>
-            <p>I'm a Seattle-based archivist and technical art historian from San Diego, California. I'm also an independent researcher exploring information sensuality and invisible information labor. </p>
-            
-            <p>I'm currently working with my good friend <a target="_blank" href="https://www.nsaxena.com/">Nayan Saxena</a> on connecting these areas to machine learning. I'm also currently assisting the <a target="_blank" href="https://www.chihuly.com/about-chihuly-studio">Chihuly, Inc.</a> archives.</p>
-            <p>If you have any questions at all, please feel free to <a target="_self" href="mailto:liampb@duck.com" >get in touch</a>, and check out more about me and my work below. Thanks for stopping by!</p>
-            <br>
-            <br>
-            <button class="accordion">PROFESSIONAL PHILOSPHY</button>
-            <div class="panel">
-                <p>
-                    I believe that information is constructed, relational, and personal, and that information work is social work. Data is joyful, painful, and enduring, and it is my job to honor the lives lived within it.
-                </p>
-            </div>
-            <button class="accordion">CONSULTING & SPECIALITES</button>
-            <div class="panel">
-                <p>
-                    I consult for United States-based repositories, both in English and American Sign Language. I also offer in-person work for Seattle-area organizations.
-                </p>
-                <p>
-                    I use a sliding scale, relative to revenue streams and income sources (including pro bono work in many cases). I am also open to time-delimited work, such as last-minute or urgent requests, and grant-limited work.
-                </p>
-                <p>
-                    I specialize in visual materials, (contemporary and historic photographic prints and negatives), rare photographic print processes, and complex records-papers collections. I am comfortable in corporate, non-profit, academic, and personal archives settings (including home visits).
-                </p>
-                <p>
-                    If you're looking for a moving-image specialist, I would recommend checking with the <a target="_blank" href="https://amianet.org/">Association of Moving Image Archivists</a> for specialists in your area!
-                </p>
-            </div>
-            <button class="accordion">PORTFOLIO MATERIALS</button>
-            <div class="panel">
-                <p>
-                    You can find an up-to-date copy of my <a target="_blank" href="https://typst.app/project/rmx8HCJB6PG6VKFWzlLwkq">CV</a> here. <br> Here are a selection of published finding aids which exemplify my work: (<a target="_blank" href="https://web.archive.org/web/20260420005646/https://archiveswest.orbiscascade.org/ark:80444/xv791503">a</a>) (<a target="_blank" href="https://web.archive.org/web/20260729174051/https://archiveswest.orbiscascade.org/ark:80444/xv708159">b</a>) (<a target="_blank" href="https://web.archive.org/web/20260729174301/https://archiveswest.orbiscascade.org/ark:80444/xv506181">c</a>). Likewise, you can find writing samples in a variety of formats here: (<a target="_blank" href="#">a</a>) (<a target="_blank" href="#">b</a>)!
-                </p>
-            </div>
-            <button class="accordion">OTHER SITES</button>
-            <div class="panel">
-                <p>
-                    Find me on <a target="_blank" href="https://github.com/bryantliampatrick">GitHub</a>, check my <a target="_blank" href="https://orcid.org/0009-0008-7065-4823">ORCid</a> for all professional work, and also my personal website <a target="_blank" href="https://limbosphere.org/">The Limbosphere</a> for just about everything else!
-                </p>
-                <p>
-                    Though I am not active on other sites, some cached content may be floating around. These will be most up to date!
-                </p>
-            </div>
-            <script src="/script.js"></script>
+        <main class="dropdowns">
+            <ul>
+                <li class="dropdown">
+                    <input type="checkbox" />
+                    <a href="#" data-toggle="dropdown">PROFESSIONAL PHILOSPHY</a>
+                    <ul class="dropdown-menu">
+                        <li> I believe that information is constructed, relational, and personal, and that information work is social work. Data is joyful, painful, and enduring, and it is my job to honor the lives lived within it.</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <input type="checkbox" />
+                    <a href="#" data-toggle="dropdown">CONSULTING & SPECIALTIES</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            I consult for United States-based repositories, both in English and American Sign Language. I also offer in-person work for Seattle-area organizations.
+                            <br><br>
+                            I use a sliding scale, relative to revenue streams and income sources (including pro bono work in many cases). I am also open to time-delimited work, such as last-minute or urgent requests, and grant-limited work.
+                            <br><br>
+                            I specialize in visual materials, (contemporary and historic photographic prints and negatives), rare photographic print processes, and complex records-papers collections. I am comfortable in corporate, non-profit, academic, and personal archives settings (including home visits).
+                            <br><br>
+                            If you're looking for a moving-image specialist, I would recommend checking with the <a target="_blank" href="https://amianet.org/">Association of Moving Image Archivists</a> for specialists in your area!
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <input type="checkbox" />
+                    <a href="#" data-toggle="dropdown">PORTFOLIO MATERIALS</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            Find me on <a target="_blank" href="https://github.com/bryantliampatrick">GitHub</a>, check my <a target="_blank" href="https://orcid.org/0009-0008-7065-4823">ORCid</a> for all professional work, and also my personal website <a target="_blank" href="https://limbosphere.org/">The Limbosphere</a> for just about everything else!
+                            <br><br>
+                            Though I am not active on other sites, some cached content may be floating around. These will be most up to date!
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <input type="checkbox" />
+                    <a href="#" data-toggle="dropdown">OTHER SITES</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            You can find an up-to-date copy of my <a target="_blank" href="https://typst.app/project/rmx8HCJB6PG6VKFWzlLwkq">CV</a> here.
+                            <br><br>
+                            Here are a selection of published finding aids which exemplify my work: (<a target="_blank" href="https://web.archive.org/web/20260420005646/https://archiveswest.orbiscascade.org/ark:80444/xv791503">a</a>) (<a target="_blank" href="https://web.archive.org/web/20260729174051/https://archiveswest.orbiscascade.org/ark:80444/xv708159">b</a>) (<a target="_blank" href="https://web.archive.org/web/20260729174301/https://archiveswest.orbiscascade.org/ark:80444/xv506181">c</a>).
+                            <br><br>
+                            Likewise, you can find writing samples in a variety of formats here: (<a target="_blank" href="#">a</a>) (<a target="_blank" href="#">b</a>)!
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </main>
-        <footer>
+        <footer class="footer">
             <p>Made with 100% human labor.</p>
         </footer>
     </body>
